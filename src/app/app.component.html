@@ -1,0 +1,28 @@
+<main class="bg-primary">
+  <section>
+    <div class="container">
+      <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>To Do List - Angular</h3>
+            </div>
+            <div class="card-body" style="height: 50vh;">
+              <ul class="list-group list-group-flush">
+                <li *ngFor="let task of taskList; index as i;" class="list-group-item d-flex justify-content-between">
+                  {{ task.name }}
+                  <span (click)="onClick(i)" class="badge bg-danger hoverable"><i class="bi bi-x"></i></span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <form (ngSubmit)="onSubmit()">
+                <input type="text" class="form-control" [(ngModel)]="value" [ngModelOptions]="{standalone:true}" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
